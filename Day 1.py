@@ -17,9 +17,9 @@
 15. serve the cake
 '''
 
+'''
+#Day 1
 #1.
-
-
 def fact(n):
     product = 1
     for i in range(n):
@@ -66,12 +66,65 @@ def quadratic_algo(items):
 quadratic_algo([4, 5, 6, 8])
 # Quadratic - O(n^2)
 
+'''
 
+# Day 2:
 
+# Using pseudocode design an algorithm that sums all the numbers from 1 to 100
+'''
+x equals 0
+for number in the range 1 to 100:
+    x plus equals number
+'''
+'''
+x = 0
+for number in range(0,101):
+    x += number
+print(x)
+'''
+'''
+def recursionExample(tracker):
+    if tracker > 4:
+        return True
+    else:
+        return recursionExample(tracker+1)
 
+tracker = 0
+print(recursionExample(-992))
+'''
+'''
+searchdata = 10
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+def linearSearch(numbers):
+    for number in numbers:
+        if searchdata == number:
+            return True
+print(linearSearch(numbers))
+'''
+import math
+def binarySearch(a, value, left, right):
+    if right > left:
+        return "not found"
+    mid = math.floor((len(a)-1)/2)
+    if a[mid] == value:
+        print("true")
+        return mid
+    if value < a[mid]:
+        print("left")
+        a = a[0:mid+1]
+        return binarySearch(a, value, left, mid - 1)
+    else:
+        print("right")
+        a = a[mid+1:6]
+        return binarySearch(a, value, mid + 1, right)
+print(binarySearch([1,2,3,4,5,6],4,6,1))
 
-
-
-
-
+'''
+def findFactorial(num):
+    for i in range(0, num-1):
+        print(i)
+        num += num * i
+    return num
+print(findFactorial(5))
+'''
 
