@@ -101,24 +101,25 @@ def linearSearch(numbers):
             return True
 print(linearSearch(numbers))
 '''
+'''
 import math
 def binarySearch(a, value, left, right):
     if right > left:
         return "not found"
-    mid = math.floor((len(a)-1)/2)
+    mid = math.floor((len(a))/2)
     if a[mid] == value:
         print("true")
         return mid
     if value < a[mid]:
         print("left")
-        a = a[0:mid+1]
+        a = a[0:mid]
         return binarySearch(a, value, left, mid - 1)
     else:
         print("right")
-        a = a[mid+1:6]
+        a = a[mid:len(a)]
         return binarySearch(a, value, mid + 1, right)
-print(binarySearch([1,2,3,4,5,6],4,6,1))
-
+print(binarySearch([1,2,3,4,5,6],6,6,1))
+'''
 '''
 def findFactorial(num):
     for i in range(0, num-1):
@@ -127,4 +128,82 @@ def findFactorial(num):
     return num
 print(findFactorial(5))
 '''
+'''
+# recursion problem warm up
+def evenSum(n):
+    if n <= 1:
+        return 0
+    else:
+        if n%2 == 1:
+            return evenSum(n-1)
+        else:
+            return n + evenSum(n-1)
+
+print(evenSum(998))
+'''
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, data):
+        self.stack.append(data)
+
+    def pop(self):
+        holder = self.stack[-1]
+        del self.stack[-1]
+        return holder
+
+numberStack = Stack()
+numberStack.push(2)
+numberStack.push(3)
+numberStack.push(8011)
+print(numberStack.stack)
+numberStack.pop()
+print(numberStack.stack)
+# stacks are LIFO (last in, first out)
+
+class Queue:
+    def __init__(self):
+        self.queue = []
+
+    def enqueue(self, data):
+        self.queue.append(data)
+
+    def dequeue(self):
+        holder = self.queue[0]
+        del self.queue[0]
+        return holder
+
+    def peek(self):
+        return self.queue[0]
+
+numberStack = Queue()
+numberStack.enqueue(2)
+numberStack.enqueue(3)
+numberStack.enqueue(8011)
+numberStack.dequeue()
+print(numberStack.queue)
+print(numberStack.peek)#?
+# queues are FILO (first in, last out)
+
+import random
+class RandOut:
+    def __init__(self):
+        self.list = []
+
+    def add(self, data):
+        self.list.append(data)
+
+    def delete(self):
+        r = random.randint(0, (len(self.list)-1))
+        holder = self.list[r]
+        del self.list[r]
+        return holder
+numberStack = RandOut()
+numberStack.add(2)
+numberStack.add(3)
+numberStack.add(8011)
+numberStack.delete()
+print(numberStack.list)
+
 
