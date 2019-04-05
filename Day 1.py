@@ -141,6 +141,7 @@ def evenSum(n):
 
 print(evenSum(998))
 '''
+'''
 class Stack:
     def __init__(self):
         self.stack = []
@@ -205,5 +206,49 @@ numberStack.add(3)
 numberStack.add(8011)
 numberStack.delete()
 print(numberStack.list)
+'''
 
 
+# cryptology
+
+def caesar(text, key):
+    text = list(text)
+    for i in range(len(text)):
+        text[i] = chr(int(ord(text[i]))+key)
+    print(text)
+
+caesar("Hello", 3)
+
+'''
+# ??? not done
+def encrypt(text, key):
+    alph = [4,5,6]
+    ALPH = [8,9,1,0]
+    for i in range(len(text)):
+        if text[i] == type(int):
+            text[i] == int(text[i])+key
+        elif text[i] in alph:
+            text[i] == chr(int(ord(text[i]))+key*2)
+        elif text[i] in ALPH:
+            text[i] == chr(int(ord(text[i]))+key+3)
+        else:
+            text[i] == int((text[i])+key*8)
+        print(text)
+        return text
+
+
+nums = []
+while True:
+    num = int(input("\nInput a number you would like to encrypt "))
+    if isinstance(num, int):
+        nums.append(num)
+        again = input("\nAgain? (y for yes)").lower()
+        if again != 'y':
+            key = int(input("\nKey: "))
+            print(encrypt(nums, key))
+            break
+    else:
+        print("\nNot a number!")
+
+therest = input("\nInput the rest of your message ")
+'''
